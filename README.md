@@ -1,9 +1,11 @@
-## sigsegv's SourceMod plugins for MvM
+## sigsegv's, fixed HowToPlayMeow
 
-### mvm-unfilterdeathnotices
-Normally, in MvM mode, death notices for bot deaths only show up for players if one or more of these conditions is true:
-- the player was the killer
-- the player was the assister
-- the bot is a MiniBoss
+### mvm-usermessage-overflow-fix-v2
+- plugin fixes the **“Disconnect: Buffer overflow in net message”** issue in TF2’s Mann vs. Machine (MvM) mode.
+- It works by intercepting specific MvM usermessages like **MVMLocalPlayerUpgradesClear** and **MVMLocalPlayerUpgradesValue**.
+- Instead of letting them go through the unreliable channel **(which can overflow)**, it resends them through the reliable channel.
+- This prevents crashes or disconnects when there’s too much upgrade data being sent.
 
-This plugin adds a console variable, *sm_mvm_unfilter_deathnotices* (default 1). When nonzero, the plugin will force all death notices from robot deaths to appear for all players.
+Added IsClientInGame (fixes server crash bug)
+original plugin had a bug that caused the server to crash because the client wasn't checked for presence. If the client left the server, the server would crash.
+
