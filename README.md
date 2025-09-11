@@ -1,3 +1,6 @@
+# Edited Version
+- [sm plugins sigsegv's](https://github.com/sigsegv-mvm/sm-plugins)
+
 ## sigsegv's, fixed HowToPlayMeow
 
 ### mvm-usermessage-overflow-fix-v2
@@ -9,6 +12,7 @@
 ### Added IsClientInGame (fixes server crash bug)
 
 original plugin had a bug that caused the server to crash because the client wasn't checked for presence. If the client left server, server would crash.
+
 
 
 
